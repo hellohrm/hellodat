@@ -12,33 +12,33 @@
                 <!-- khi chạy scroll auto nó cà giật vertical scroll -->
                 <div class="swiper-wrapper">
 
-                    <div class="swiper-slide"><a lzy-img="assets/img/emp1_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/emp1_vn.png" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><img lzy-img="assets/img/emp1_vn.png" class="img-fluid" alt=""></div>
 
-                    <div class="swiper-slide"><a lzy-img="assets/img/device_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/device_vn.png" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><img lzy-img="assets/img/device_vn.png" class="img-fluid" alt=""></div>
 
-                    <div class="swiper-slide"><a lzy-img="assets/img/emp2_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/emp2_vn.png" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><img lzy-img="assets/img/emp2_vn.png" class="img-fluid" alt=""></div>
 
-                    <div class="swiper-slide"><a lzy-img="assets/img/hol_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/hol_vn.png" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><img lzy-img="assets/img/hol_vn.png" class="img-fluid" alt=""></div>
 
-                    <div class="swiper-slide"><a lzy-img="assets/img/ot_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/ot_vn.png" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><img lzy-img="assets/img/ot_vn.png" class="img-fluid" alt=""></div>
 
-                    <div class="swiper-slide"><a lzy-img="assets/img/dvt_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/dvt_vn.png" class="img-fluid" alt=""></a></div>
-
-
-                    <div class="swiper-slide"><a lzy-img="assets/img/kichhoat_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/kichhoat_vn.png" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><img lzy-img="assets/img/dvt_vn.png" class="img-fluid" alt=""></div>
 
 
-                    <div class="swiper-slide"><a lzy-img="assets/img/kichhoat1_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/kichhoat1_vn.png" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><img lzy-img="assets/img/kichhoat_vn.png" class="img-fluid" alt=""></div>
 
-                    <div class="swiper-slide"><a lzy-img="assets/img/kichhoat2_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/kichhoat2_vn.png" class="img-fluid" alt=""></a></div>
 
-                    <div class="swiper-slide"><a lzy-img="assets/img/kichhoat3_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/kichhoat3_vn.png" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><img lzy-img="assets/img/kichhoat1_vn.png" class="img-fluid" alt=""></div>
 
-                    <div class="swiper-slide"><a lzy-img="assets/img/shiftmap.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/shiftmap.png" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><img lzy-img="assets/img/kichhoat2_vn.png" class="img-fluid" alt=""></div>
 
-                    <div class="swiper-slide"><a lzy-img="assets/img/Untitled_black.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/Untitled_black.png" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><img lzy-img="assets/img/kichhoat3_vn.png" class="img-fluid" alt=""></div>
 
-                    <div class="swiper-slide"><a lzy-img="assets/img/Untitled.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/Untitled.png" class="img-fluid" alt=""></a></div>
+                    <div class="swiper-slide"><img lzy-img="assets/img/shiftmap.png" class="img-fluid" alt=""></div>
+
+                    <div class="swiper-slide"><img lzy-img="assets/img/Untitled_black.png" class="img-fluid" alt=""></div>
+
+                    <div class="swiper-slide"><img lzy-img="assets/img/Untitled.png" class="img-fluid" alt=""></div>
 
 
 
@@ -187,12 +187,75 @@
 
                     }
 
+                    var gBOX = function (e) {
+
+                        e.stopPropagation();
+                        e.preventDefault();
+
+                        var dumeID=0;
+                        //
+                        const img = e.currentTarget,
+                            idx = function () {
+                            gBOX.doggy.some(function (m, k) {
+                                if (img.src == m.href) {
+                                    dumeID = k;
+                                    return true;
+                                };
+                            });
+                        };
+
+                        if (!gBOX.galleryLightbox) {
+                            _gsC('https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js', 'js', function (data) {
+                                _gsC('https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css', 'css', function (data) {
+                                    //
+                                    gBOX.doggy= [].slice.call(gBOX.doggy);
+                                    //
+                                    gBOX.galleryLightbox = GLightbox({
+                                        //selector: '.gallery-lightbox'
+                                        elements: gBOX.doggy
+                                    });
+                                    //
+                                    idx();
+                                    gBOX.galleryLightbox.open(null, dumeID);
+                                    //
+                                    srclocked(false);
+                                    //
+                                }, 'glightbox.min.css');
+                            }, 'glightbox.min.js');
+                        } else {
+                            //debugger;
+                            idx();
+                            gBOX.galleryLightbox.open(null, dumeID);
+                            //
+                            srclocked(false);
+                            //
+                        };
+                    };
+
+
                     function gallery_slider(gal) {
 
-                        gal.find('[lzy-img]').each(function (i, x) {
-                            x = $(x);
-                            x.attr(this.tagName.toLowerCase() == 'a' ? 'href' : 'src', src$pf + "/odat/" + apisvr.a$.selected_language + '/' + x.attr('lzy-img'));
-                        });
+                        gBOX.doggy = gal.find('[lzy-img]')
+
+                            .map(function (i, x) {
+                                //
+                                x = $(x);
+                                //
+                                const lnk = src$pf + "/odat/" + apisvr.a$.selected_language + '/' + x.attr('lzy-img');
+                                //
+                                x.attr(this.tagName.toLowerCase() == 'a' ? 'href' : 'src', lnk);
+                                //
+                                return {
+
+                                    'id': i,
+
+                                    'href': lnk,
+
+                                    'type': 'image', // Type is only required if GLightbox fails to know what kind of content should display
+                                    //zoomable: false,
+                                };
+                                //
+                            });
 
                         new Swiper(gal, {
                             speed: 400,
@@ -247,17 +310,13 @@
 
 
 
-                        _gsC('https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js', 'js', function (data) {
-                            _gsC('https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css', 'css', function (data) {
-                                //
-                                debugger;
-                                //
-                                var galleryLightbox = GLightbox({
-                                    selector: '.gallery-lightbox'
-                                });
-                                //
-                            }, 'glightbox.min.css');
-                        }, 'glightbox.min.js');
+                        gal.on('click', 'img',  function (e) {
+                            srclocked(true);
+                            setTimeout(function () {
+                                gBOX(e);
+                            },100);
+                        });
+
 
 
                     };
