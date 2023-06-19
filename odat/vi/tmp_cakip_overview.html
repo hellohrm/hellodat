@@ -1,32 +1,323 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
- <script type="text/javascript">
-     //
+﻿<div class="container">
 
 
-     $.get('https://hellohrm.github.io/utils/media/utils/tikestep_s4.js.html?t=' + src$id, function (d) {
-         //
-         //d = d.replace(/ti-check/g, 'bx bx-check bx-sm');
-         //d = d.replace(/ti-close/g, 'bx bx-x bx-sm');
-         //d = d.replace(/ti-help-alt/g, 'bx bx-help-circle');
-         //
-         //d = d.split('[apisvr.a$.selected_language]');
-         //d = puhwnd.find('.modal-body').append(d.join('["' + lan + '"]'));
 
-         //d.find('.service-grid').addClass('p-3');
-         //
-         //
-         debugger;
-         const tab = w0w.app_container.find('#tabBODY_' + elTAB[0].__actTAB);
-         tab.append(d);
-         //
-         //
-     });
- </script>
-</body>
-</html>
+    <div class='console-container py-3'><span id='text'></span><div class='console-underscore' id='console'>&#95;</div></div>
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery pt-0 pb-3 pb-lg-4">
+
+        <div class="container-fluid" >
+            <div class="gallery-slider swiper">
+                <!-- khi chạy scroll auto nó cà giật vertical scroll -->
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide"><a lzy-img="assets/img/emp1_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/emp1_vn.png" class="img-fluid" alt=""></a></div>
+
+                    <div class="swiper-slide"><a lzy-img="assets/img/device_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/device_vn.png" class="img-fluid" alt=""></a></div>
+
+                    <div class="swiper-slide"><a lzy-img="assets/img/emp2_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/emp2_vn.png" class="img-fluid" alt=""></a></div>
+
+                    <div class="swiper-slide"><a lzy-img="assets/img/hol_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/hol_vn.png" class="img-fluid" alt=""></a></div>
+
+                    <div class="swiper-slide"><a lzy-img="assets/img/ot_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/ot_vn.png" class="img-fluid" alt=""></a></div>
+
+                    <div class="swiper-slide"><a lzy-img="assets/img/dvt_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/dvt_vn.png" class="img-fluid" alt=""></a></div>
+
+
+                    <div class="swiper-slide"><a lzy-img="assets/img/kichhoat_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/kichhoat_vn.png" class="img-fluid" alt=""></a></div>
+
+
+                    <div class="swiper-slide"><a lzy-img="assets/img/kichhoat1_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/kichhoat1_vn.png" class="img-fluid" alt=""></a></div>
+
+                    <div class="swiper-slide"><a lzy-img="assets/img/kichhoat2_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/kichhoat2_vn.png" class="img-fluid" alt=""></a></div>
+
+                    <div class="swiper-slide"><a lzy-img="assets/img/kichhoat3_vn.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/kichhoat3_vn.png" class="img-fluid" alt=""></a></div>
+
+                    <div class="swiper-slide"><a lzy-img="assets/img/shiftmap.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/shiftmap.png" class="img-fluid" alt=""></a></div>
+
+                    <div class="swiper-slide"><a lzy-img="assets/img/Untitled_black.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/Untitled_black.png" class="img-fluid" alt=""></a></div>
+
+                    <div class="swiper-slide"><a lzy-img="assets/img/Untitled.png" class="gallery-lightbox" data-gall="gallery-carousel"><img lzy-img="assets/img/Untitled.png" class="img-fluid" alt=""></a></div>
+
+
+
+                </div>
+                <div class="swiper-pagination mt-lg-5"></div>
+            </div>
+
+        </div>
+    </section><!-- End Gallery Section -->
+
+
+    <style type="text/css">
+        .gallery {
+          overflow: hidden;
+        }
+
+        .gallery .swiper-slide {
+          transition: 0.3s;
+        }
+
+        .gallery .swiper-pagination {
+          margin-top: 20px;
+          position: relative;
+        }
+
+        .gallery .swiper-pagination .swiper-pagination-bullet {
+          width: 12px;
+          height: 12px;
+          background-color: #fff;
+          opacity: 1;
+          border: 1px solid #5777ba;
+        }
+
+        .gallery .swiper-pagination .swiper-pagination-bullet-active {
+          background-color: #5777ba;
+        }
+
+        .gallery .swiper-slide-active {
+          text-align: center;
+        }
+
+        .hidden {
+          opacity:0;
+        }
+        .console-container {
+ 
+          /*font-family:Khula;*/
+          font-size:4em;
+          text-align:center;
+          /*height:200px;
+          width:600px;*/
+          display:block;
+          /*position:absolute;*/
+          /*color:white;*/
+          /*top:0;
+          bottom:0;
+          left:0;
+          right:0;*/
+          margin:auto;
+        }
+        .console-underscore {
+           display:inline-block;
+          position:relative;
+          top:-0.14em;
+          left:10px;
+        }
+    </style>
+    <script type="text/javascript">
+        //
+
+        (function (a) {
+
+            if (!tabglobalJS.hasOwnProperty('tmp_cakip_overview')) tabglobalJS['tmp_cakip_overview'] = a({});//pass pubArgs later if need
+
+        })(function (O) {
+
+
+            "use strict";
+            var myUI
+                , _init = function (frmEL, cb, tabId, clickArgs, tabProps) {
+
+
+                    function consoleText(words, id, colors) {
+                        if (colors === undefined) colors = ['#fff'];
+                        var visible = true;
+                        var con = document.getElementById('console');
+                        var letterCount = 1;
+                        var x = 1;
+                        var waiting = false;
+                        var target = document.getElementById(id)
+                        target.setAttribute('style', 'color:' + colors[0])
+                        window.setInterval(function () {
+
+                            if (letterCount === 0 && waiting === false) {
+                                waiting = true;
+                                target.innerHTML = words[0].substring(0, letterCount)
+                                window.setTimeout(function () {
+                                    var usedColor = colors.shift();
+                                    colors.push(usedColor);
+                                    var usedWord = words.shift();
+                                    words.push(usedWord);
+                                    x = 1;
+                                    target.setAttribute('style', 'color:' + colors[0])
+                                    letterCount += x;
+                                    waiting = false;
+                                }, 1000)
+                            } else if (letterCount === words[0].length + 1 && waiting === false) {
+                                waiting = true;
+                                window.setTimeout(function () {
+                                    x = -1;
+                                    letterCount += x;
+                                    waiting = false;
+                                }, 1000)
+                            } else if (waiting === false) {
+                                target.innerHTML = words[0].substring(0, letterCount)
+                                letterCount += x;
+                            }
+                        }, 120)
+                        window.setInterval(function () {
+                            if (visible === true) {
+                                con.className = 'console-underscore hidden'
+                                visible = false;
+
+                            } else {
+                                con.className = 'console-underscore'
+
+                                visible = true;
+                            }
+                        }, 400)
+                    }
+
+                    //
+                    /**
+                     * Gallery Slider
+                     */
+                    function dume_lag(gal, tio) {
+
+                        var dox = $(gal.$el);
+
+                        setTimeout(function () {
+                            //debugger;
+                            dume_lag.lastH = dox.height();
+                            dox.parent().height(dume_lag.lastH);
+
+                        }, tio);
+
+                    }
+
+                    function gallery_slider(gal) {
+
+                        gal.find('[lzy-img]').each(function (i, x) {
+                            x = $(x);
+                            x.attr(this.tagName.toLowerCase() == 'a' ? 'href' : 'src', src$pf + "/odat/" + apisvr.a$.selected_language + '/' + x.attr('lzy-img'));
+                        });
+
+                        new Swiper(gal, {
+                            speed: 400,
+                            loop: true,
+                            centeredSlides: true,
+                            autoplay: {
+                                delay: 5000,
+                                disableOnInteraction: false
+                            },
+                            slidesPerView: 'auto',
+                            pagination: {
+                                el: '.swiper-pagination',
+                                type: 'bullets',
+                                clickable: true
+                            },
+                            breakpoints: {
+                                320: {
+                                    slidesPerView: 1,
+                                    spaceBetween: 30
+                                },
+                                640: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 30
+                                },
+                                992: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 30
+                                },
+                                1200: {
+                                    slidesPerView: 5,
+                                    spaceBetween: 30
+                                }
+                            },
+                            on: {
+                                init: function (e) {
+                                    dume_lag(this, 1000);
+                                }
+                            }
+                        }).on('click', function (e) {//slideChange
+                            //this.$el.trigger('dumeswiper');
+                        }).on('breakpoint', function (e) {
+                            dume_lag(this, 300);
+                            dume_lag(this, 500);
+                        }).on('resize', function () {
+                            dume_lag(this, 300);
+                            dume_lag(this, 500);
+                        }).on('beforeTransitionStart', function (e) {
+
+                        }).on('slideChangeTransitionEnd', function (e) {
+
+                        });
+
+
+
+                        _gsC('https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js', 'js', function (data) {
+                            _gsC('https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css', 'css', function (data) {
+                                //
+                                debugger;
+                                //
+                                var galleryLightbox = GLightbox({
+                                    selector: '.gallery-lightbox'
+                                });
+                                //
+                            }, 'glightbox.min.css');
+                        }, 'glightbox.min.js');
+
+
+                    };
+
+
+                    //debugger;
+
+                    _gsC('https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css', 'css', function (data) {
+                        _gsC('https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js', 'js', function (data) {
+
+                            debugger;
+                            const tab = w0w.app_container.find('#tabBODY_' + elTAB[0].__actTAB),
+                                gal = tab.find('.gallery-slider');
+
+                            $.get('https://hellohrm.github.io/utils/media/utils/tikestep_s4.js.html?t=' + src$id, function (d) {
+                                //
+                                //d = d.replace(/ti-check/g, 'bx bx-check bx-sm');
+                                //d = d.replace(/ti-close/g, 'bx bx-x bx-sm');
+                                //d = d.replace(/ti-help-alt/g, 'bx bx-help-circle');
+                                //
+                                //d = d.split('[apisvr.a$.selected_language]');
+                                //d = puhwnd.find('.modal-body').append(d.join('["' + lan + '"]'));
+
+                                //d.find('.service-grid').addClass('p-3');
+                                //
+                                //
+                                tab.append(d);
+                                //
+                            });
+                            //
+                            setTimeout(function () {
+
+                                gallery_slider(gal);
+
+
+
+                                srclocked(false);
+
+
+                            }, 300);
+                            //
+                            //
+                            consoleText(['Hello World.', 'Console Text', 'Made with Love.'], 'text', ['tomato', 'rebeccapurple', 'lightblue']);
+                            //
+                            //
+                        }, 'swiper.min.js');
+                    }, 'swiper-min-css');
+
+                }
+                , _dispose = function () {
+                    //debugger;
+                    //myUI.dispose();
+                };
+
+            return {
+                init: _init,
+                dispose: _dispose
+            };
+
+        });
+
+    </script>
+</div>
